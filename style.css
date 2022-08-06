@@ -1,0 +1,1308 @@
+@font-face {
+    font-family: tommy;
+    src: url(fonts/MADE\ TOMMY\ Regular_PERSONAL\ USE.otf) format("opentype");
+}
+
+@font-face {
+    font-family: mont;
+    src: url(fonts/Mont-HeavyDEMO.otf) format("opentype");
+}
+
+@font-face {
+    font-family:pop ;
+    src: url(fonts/Poppins-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: rob;
+    src: url(fonts/Roboto-Light.ttf) format("truetype");
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container
+{
+    width: 100%;
+    max-width: 378px;
+    min-height: 100%;
+    background: #f5f5f5;
+    margin: 0px auto;
+    padding: 10px 20px;
+}
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header img
+{
+    max-width:4.2rem;
+    min-height: 2.3rem;
+}
+
+
+/* toggle */
+
+.desktop, .btn-group
+{
+    display: none;
+}
+
+#menuToggle
+{
+  display: block;
+  visibility: visible;
+  position: relative;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+  color: #fff;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width:22px;
+  height: 2px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #fff;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0,-2.3px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  background-color: #0b0b2a;
+  position: absolute;
+  width: 340px;
+  margin: -60px 0 0 -10px;
+  padding: 20px;
+  padding-top: 60px;
+  right: 0;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(0%, -100%);
+  transition: transform 0.9s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 1.62rem;
+  text-align: center;
+  color: #fdfdfd;
+  line-height: 33.6px;
+  
+}
+
+#menu li a
+{
+  color: #fff;
+  font-family: 'tommy';
+  text-decoration: underline;
+}
+
+#menu a li button
+{
+    margin-top: 20px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    width: 231px;
+    height: 58px;
+    line-height: 61px;
+    background-color: #030b2b;
+    border: 1px solid #fff;
+    font-family: 'tommy';
+}
+
+#menu a li .fbtn
+{
+    background-color: #122888;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+/*  toggle ends */
+
+
+
+/* Main events starts*/
+
+main .contents .header
+{
+    margin-block: 120px;
+    position: relative;
+}
+
+main .contents .header h1
+{
+    font-size: 1.5rem;
+    width: 250px;
+    line-height: 28.53px;
+    font-weight: 900;
+    text-align:left;
+    margin: 0px auto;
+    color: #030b2a;
+    font-family: 'mont';
+}
+
+main .contents .header p
+{
+    font-size: 0.8rem;
+    font-family: 'tommy';
+    width: 253px;
+    height: 32px;
+    line-height: 20.9px;
+    font-weight: 400;
+    vertical-align: -3%;
+    margin: 10px auto;
+    text-align: left;
+    color: #0b0b2a;
+}
+
+main .contents .header button
+{
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 40px;
+    background-color: #e29925;
+    color: #fff;
+    font-size: 0.625rem;
+    font-weight: 400;
+    position: absolute;
+    left: 0;
+    font-family: 'tommy';
+    letter-spacing: 3%;
+    text-transform: capitalize;
+}
+
+main .contents .hero-img
+{
+    background-image: url(images/Subtract.png);
+    background-position: right bottom, left top;
+    z-index: -1;
+    background-repeat: no-repeat, repeat;
+    background-size: contain;
+}
+
+
+main .contents .hero-img img
+{
+    width: 100%;
+    height: 312px;
+    margin: 0px auto;
+}
+
+
+
+/* gett connected*/
+
+main .advantages
+{
+    margin-top: 100px;
+}
+
+main .advantages h2
+{
+    font-size: 2.25rem;
+    text-align: center;
+    line-height: 39.6px;
+    font-weight: 900;
+    font-family: 'tommy';
+}
+
+main .advantages .card-wrapper .card
+{
+    text-align: center;
+    padding:70px 0;
+}
+
+main .advantages .card-wrapper .card h4
+{
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 32.58px;
+    color: #122888;
+    height: 33px;
+    text-transform: capitalize;
+    margin-top : 20px;
+    font-family: 'tommy';
+}
+
+main .advantages .card-wrapper .card p
+{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    color: #122888;
+    height: 72px;
+    text-transform: capitalize;
+    margin-top : 40px;
+    color: #282828;
+    font-family: 'pop';
+}
+
+/* Youtube page*/
+.youtube
+{
+    background-color: #030b2a;
+    margin-bottom: 100px;
+    padding: 30px 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.youtube  .headings h3
+{
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+    color: #12288b;   
+    font-family: 'pop';
+}
+
+.youtube  .headings h5
+{
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 33.8px;
+    text-align: center;
+    color: #fff;   
+    margin-top: 10px;
+    font-family: 'tommy';
+    
+}
+
+.youtube .fa-arrow-down
+{
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: block;
+    width: 9.95px;
+    height: 9.95px;
+}
+
+.youtube .white-part
+{
+    background-color: #fff;
+    margin-top: 80px;
+    width: 293px;   
+    height: 207px;
+    text-align: center;
+    position: relative;
+}
+
+.youtube .white-part .techimg-box
+{
+    margin: 20px auto;
+    max-width: 140px;
+    min-height: 51px;
+}
+
+.youtube .white-part .circle
+{
+    width: 53.36px;
+    height: 53.36px;
+    border:1px solid rgba(18, 40, 136, 0.29);
+    border-radius: 50%;
+    margin:15px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.youtube .white-part .fa-play
+{
+    position: absolute;
+    bottom: 77px;
+    left: 140px;
+    width: 19.27;
+    height: 19.27;
+    
+}
+
+/* how it works start*/
+.howitworks
+{
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.howitworks h2
+{
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 27.4px;
+    text-align: center;
+    color: #000;   
+    letter-spacing: -0.03em;
+    text-transform: capitalize;
+    font-family: 'mont';
+}
+
+.howitworks .process
+{
+    display: flex;
+    margin-top: 60px;
+}
+
+.howitworks .process .side-card
+{
+    flex:20%;
+}
+
+.howitworks .process .side-card .fcircle
+{
+    margin-top: 0px;
+    background-color: 40px;
+}
+
+.circle-wrapper
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.howitworks .process .side-card .circle-wrapper .circle
+{
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+    border: 1px solid #122887;
+    color: #122887;
+}
+
+.howitworks .process .side-card .circle-wrapper .circle h3
+{
+    font-size: 0.66rem;
+    line-height: 20px;
+    padding-top: 17px;
+    font-family: 'tommy';
+}
+
+.howitworks .process .side-card .arrow
+{
+    height: 40px;
+    width:1px;
+    background-color: #122887;
+    position: relative;
+    left: 35px;
+    top: 0px;
+    margin: 15px 0;
+}
+
+
+.howitworks .process .side-card .arrow:after
+{
+   content: '';
+   display: inline-block;
+   width: 10px;
+   height: 2px;
+   background-color: #fff;
+   transform: rotate(135deg);
+   position: absolute;
+   bottom: 0px;
+   left: -2px;
+   background-color: #122887;
+}
+
+.howitworks .process .side-card .arrow:before
+{
+   content: '';
+   display: inline-block;
+   width: 10px;
+   height: 2px;
+   background-color: #fff;
+   transform: rotate(230deg);
+   position: absolute;
+   right: -2px;
+   bottom: 0;
+   background-color: #122887;
+}
+
+
+.howitworks .process .time-line
+{
+    flex:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.howitworks .process .time-line .container-right img
+{
+    display: none;
+}
+
+.howitworks .process .side-card .circle
+{
+    max-width: 100%;
+}
+
+.howitworks .process .time-line .container-right .content h3
+{
+    color: #122888;
+    line-height: 23px;
+    font-size: 10px;
+    letter-spacing: -3%;
+    font-weight: 700;
+    font-family: 'tommy';
+}
+
+.howitworks .process .time-line .container-right .content p
+{
+    color: #122888;
+    line-height: 23px;
+    font-size: 5px;
+    letter-spacing: -3%;
+    font-weight: 400;
+    font-family: 'tommy';
+}
+
+/* how it works end*/
+
+.informed
+{
+    background-color: #122888;
+    width: 90%;
+    text-align: center;
+    padding: 50px 0;
+    border-radius: 5.48px;
+    margin: 0px auto;
+    transform:translateY(70px)
+}
+
+.informed h2
+{
+    font-size: 0.6rem;
+    line-height: 18px;
+    letter-spacing:-3%;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'mont';
+}
+
+.informed p
+{
+    font-size: 0.3rem;
+    line-height: 13px;
+    letter-spacing:-3%;
+    color: #fff;
+    font-family: 'tommy';
+}
+
+.informed form input[type=text]
+{
+    display: block;
+    margin: 10px auto;
+    height: 30px;
+    width: 180px;
+    border-radius: 5px;
+    box-shadow: none;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 0.5rem;
+    color: #0c1c60;
+    font-family: 'rob';
+}
+
+.informed form input[type=submit]
+{
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    font-size: 0.625rem;
+    color: #fff;
+    background-color: #e29925;
+    font-family: 'rob';
+}
+
+/* get informed ends */
+
+footer
+{
+    background-color: #030b2b;
+    padding-top:100px;
+    color: #fff;
+    text-align: center;
+}
+
+footer .rows
+{
+ margin-top: 50px;   
+ position: relative;
+}
+
+footer .rows h2
+{
+    font-size: 0.88rem;
+    line-height: 40px;
+    margin-top: 50px;   
+    color: #fdfdfd;
+    font-weight: 500;
+    letter-spacing: 3%;
+    font-family: 'pop';
+}
+
+footer .rows hr
+{
+    width: 35px;
+    text-align: center;
+    position: absolute;
+    left: 144px;
+    top: 30px;
+    color: #e29925;
+}
+
+footer .first hr
+{
+    margin-left: 5px;
+}
+
+footer .rows ul li
+{
+    list-style-type: none;
+    font-family: 'tommy';
+    font-size: 0.5rem;
+    line-height: 20px;
+}
+
+footer .second-row
+{
+    margin: 130px 0;
+}
+
+footer .second-row .vectors
+{
+    display: none;
+}
+
+footer .second-row .fprow
+{
+    font-size: 0.312rem;
+    font-weight: 400;
+    line-height: 16px;   
+}
+
+footer .second-row hr
+{
+    width: 80%;
+    margin: 15px auto;
+}
+
+footer .row
+{
+    font-weight: 300;
+    font-size: 4px;
+    line-height: 12.9px;
+    margin: 1px auto;
+}
+
+/*  footer ends */
+
+
+@media screen and (min-width:768px) and (max-width: 1440px){
+.container
+    {
+        width: 100%;
+        max-width: 1440px;
+        min-height: 100%;
+        background: #f5f5f5;
+        margin: 0px auto;
+        padding: 30px 70px;
+    }
+    
+    a
+    {
+        text-decoration: none;
+    }
+
+    header img
+    {
+        max-width:7.7rem;
+        min-height: 2.3rem;
+    }
+
+ .desktop, .btn-group
+{
+    display: block;
+}
+
+.mobile
+{
+    display: none;
+}
+
+.desktop ul 
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 1.4rem;
+    color: #020511;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.desktop ul li
+{
+    list-style-type: none;
+    font-family: 'tommy';
+    font-size: 1rem;
+}
+
+.desktop li a
+{   
+    font-size: 1rem;
+}
+
+header .btn-group button
+{
+    width: 181px;
+    height: 65px;
+    font-size: 1.12rem;
+    border: none;
+    font-family: 'tommy';
+    border-radius: 5px;
+}
+
+header .btn-group .bt1
+{
+    border: none;
+    background: #FFFFFF;
+}
+
+header .btn-group .bt1 .fa-cloud
+{
+    border: none;
+    background: #FFFFFF;
+}
+
+header .btn-group .bt2
+{
+    background: #e29925;
+    color: #fff;
+}
+
+/* Main events starts*/
+
+main .contents
+{
+    display: flex;
+    gap: 10px;
+}
+
+main .contents .header
+{
+    flex: 30%;
+    display: flex;
+    flex-direction:column;
+}
+
+main .contents  .hero-img
+{
+    flex: 70%;
+    display: flex;
+    flex-direction:column;
+}
+
+main .contents .header h1
+{
+    font-size: 3.4rem;
+    width: 678px;
+    line-height: 60.01px;
+    font-weight: 800;
+    color: #030b2a;
+    font-family: 'mont';
+}
+
+main .contents .header p
+{
+    font-size: 2.3rem;
+    font-family: 'tommy';
+    text-align: left;
+    font-weight: 400;
+    color: #0b0b2a;
+    line-height: 33.8px;
+    margin:0;
+    width:452px;
+    letter-spacing: -3%;
+}
+
+main .contents .header button
+{
+    width: 219px;
+    height: 65px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 250px;
+    background-color: #e29925;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-family: 'tommy';
+    text-transform: capitalize;
+}
+
+
+main .contents .hero-img
+{
+    background-image: url(images/Subtract.png);
+    background-position: right bottom, left top;
+    z-index: 1;
+    background-repeat: no-repeat, repeat;
+    background-size: contain;
+    transform: translateX(-130px);
+}
+
+main .contents .hero-img img
+{
+    width: 700px;
+    height: 512px;
+    margin: 0px auto;
+}
+
+/* gett connected*/
+
+main .advantages
+{
+    margin-top: 120px;
+}
+
+main .advantages h2
+{
+    font-size: 2.25rem;
+    text-align: center;
+    line-height: 50.6px;
+    font-weight: 700;
+    font-family: 'tommy';
+}
+
+main .advantages .card-wrapper
+{
+    display: flex;
+}
+
+main .advantages .card-wrapper .card h4
+{
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 39.6px;
+    color: #122888;
+    height: 33px;
+    text-transform: capitalize;
+    margin-top : 20px;
+    font-family: 'tommy';
+    letter-spacing: -3%;
+}
+
+
+main .advantages .card-wrapper .card p
+{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    color: #122888;
+    text-transform: capitalize;
+    margin-top : 40px;
+    color: #282828;
+    font-family: 'pop';
+}
+
+/* Youtube page*/
+.youtube
+{
+    background-color: #030b2a;
+    margin-bottom: 100px;
+    padding:60px 13px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+    justify-content: space-evenly;
+}
+
+.youtube  .headings h3
+{
+    font-size:2.9rem;
+    font-weight: 700;
+    line-height: 50.6px;
+    text-align: center;
+    color: #12288b;   
+    font-family: 'pop';
+}
+
+.youtube  .headings h5
+{
+    font-size: 4.37rem;
+    font-weight: 400;
+    line-height: 70px;
+    text-align: left;
+    color: #fff;   
+    margin-top: 10px;
+    font-family: 'tommy';
+    width: 270px;
+    margin-top: 32px;   
+}
+
+.youtube .fa-arrow-down
+{
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: block;
+    width: 9.95px;
+    height: 33px;
+}
+
+.youtube .white-part .techimg-box
+{
+    margin: 20px auto;
+    width: 561px;
+    height: 395px;
+}
+
+.youtube .white-part
+{
+    background-color: #fff;
+    margin-top: 80px;
+    width: 561px;   
+    height: 395px;
+    text-align: center;
+    position: relative;
+    transform: translateY(-50px);
+}
+
+.youtube .white-part img
+{
+    background-color: #fff;
+    margin-top: 40px;
+    transform: translateX(-40px);
+    width: 269px;   
+    height: 99px;
+    text-align: center;
+    position: relative;
+}
+
+.youtube .white-part .circle
+{
+    width: 101.36px;
+    height: 101.36px;
+    border:1px solid rgba(18, 40, 136, 0.29);
+    border-radius: 50%;
+    position: absolute;
+    top: 130px;
+    left: 230px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.youtube .white-part .fa-play
+{
+    position: absolute;
+    top: 190px;
+    left: 270px;
+    max-width: 36.78px;
+    height: 37.78px;
+}*/
+
+/* how it works start*/
+.howitworks
+{
+    margin: 100px 0;
+    position: relative;
+}
+
+.howitworks h2
+{
+    font-size: 2.9rem;
+    font-weight: 700;
+    line-height: 50.4px;
+    text-align: center;
+    color: #000;   
+    letter-spacing: -3px;
+    text-transform: capitalize;
+    font-family: 'mont';
+}
+
+.howitworks .process .side-card .circle-wrapper .circle
+{
+    text-align: center;
+    width: 109px;
+    height: 109px;
+    border-radius: 50%;
+    margin: 10px;
+    border: 1px solid #122887;
+    color: #122887;
+}
+
+.howitworks .process .side-card .circle-wrapper .circle h3
+{
+    font-size: 3.13rem;
+    line-height: 55px;
+    padding-top: 20px;
+    font-family: 'tommy';
+}
+
+.howitworks .process .side-card .arrow
+{
+    height: 70px;
+    width:2px;
+    background-color: #122887;
+    position: relative;
+    left: 61px;
+    top: 0px;
+    margin: 15px 0;
+}
+
+.howitworks .process .side-card .arrow:after
+{
+   content: '';
+   display: inline-block;
+   width: 10px;
+   height: 2px;
+   background-color: #fff;
+   transform: rotate(135deg);
+   position: absolute;
+   bottom: 0px;
+   left: -2px;
+   background-color: #122887;
+}
+
+.howitworks .process .time-line .container-right
+{
+  display: flex;
+  justify-content: space-around;
+}
+
+.howitworks .process .time-line .container-right img
+{
+  width:240px;
+  height: 150px;
+}
+
+.howitworks .process .time-line .container-right .content h3
+{
+    color: #122888;
+    line-height: 32.5px;
+    font-size: 1.6rem;
+    letter-spacing: -3%;
+    font-weight: 700;
+    font-family: 'tommy';
+}
+
+.howitworks .process .time-line .container-right .content p
+{
+    color: #122888;
+    line-height: 33.8px;
+    font-size: 1.2rem;
+    letter-spacing: -3%;
+    font-weight: 400;
+    font-family: 'tommy';
+}
+
+.howitworks .process .time-line .container-right img
+{
+    display: block;
+}
+
+/* how it works end*/
+
+.informed h2
+{
+    font-size: 2.9rem;
+    line-height: 50.6px;
+    letter-spacing:-3%;
+    color: #fff;
+    text-transform: capitalize;
+    font-family: 'mont';
+}
+
+.informed p
+{
+    font-size: 1rem;
+    line-height: 20.8px;
+    letter-spacing:-3%;
+    color: #fff;
+    font-family: 'tommy';
+    margin: 20px 0;
+}
+
+.informed form
+{
+    display: flex;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.informed form input[type=text]
+{
+    margin: 10px auto;
+    height: 69px;
+    width: 453px;
+    border-radius: 5px;
+    box-shadow: none;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 1rem;
+    color: #0c1c60;
+    font-family: 'rob';
+    font-weight: 300;
+    line-height: 16.8px;
+    outline: none;
+}
+
+.informed form input[type=submit]
+{
+    height: 65px;
+    width: 185px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    list-style: 22.39px;
+    color: #fff;
+    background-color: #e29925;
+    font-family: 'rob';
+    margin-top: 10px;
+    margin-right: 190px;
+}
+
+/* get informed ends */
+
+footer .footer-wrapper
+{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+
+footer .footer-wrapper .first-row
+{
+    flex: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+footer .footer-wrapper .second-row
+{
+    flex: 300px;
+}
+
+footer .footer-wrapper .second-row img
+{
+    width: 126px;
+    height: 84px;
+}
+
+footer .footer-wrapper .second-row .vectors 
+{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 20px auto;
+}
+
+footer .footer-wrapper .second-row .vectors .vw
+{
+    width: 45px;
+    height: 45px;
+    
+    
+}
+
+
+footer .footer-wrapper .second-row .vectors .fvectors
+{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #122888;
+    /*transform: translateY(10px);*/
+}
+
+footer .second-row .fprow
+{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -3%;
+}
+
+footer .rows h2
+{
+    font-size: 1.6rem;
+    line-height: 32.5px;
+    margin-top: 50px;   
+    color: #fdfdfd;
+    font-weight: 700;
+    letter-spacing: 3%;
+    font-family: 'pop';
+}
+
+footer .rows ul 
+{
+    margin: 20px 0;
+}
+
+footer .rows ul li
+{
+    list-style-type: none;
+    font-family: 'tommy';
+    font-size: 0.93rem;
+    line-height: 30px;
+}
+
+footer .rows hr
+{
+    width: 67px;
+    text-align: center;
+    position: absolute;
+    left: 0px;
+    top: 80px;
+    background: #e29925 ;
+}
+
+footer .first hr
+{
+    width: 67px;
+    text-align: center;
+    position: absolute;
+    left: 50px;
+    top: 80px;
+    background-color: #e29925 !important;
+}
+
+footer  hr .ft
+{
+    width: 80%;
+    margin: 15px auto;
+}
+
+footer  p
+{
+    padding:30px 0;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 24.27px;
+}
+
+footer .row
+{
+    font-weight: 300;
+    font-size: 4px;
+    line-height: 12.9px;
+    margin: 1px auto;
+}
+
+/*  footer ends */
+
+
+}
